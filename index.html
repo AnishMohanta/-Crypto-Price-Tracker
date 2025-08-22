@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Cryon</title>
+    <link rel="stylesheet" href="style.css"/>
+    
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+</head>
+<body>
+    <header>
+        <div class="poster">
+<div class="title">
+
+    <span class="dotpoint" aria-hidden="true"></span>
+    <span>Crypto Cryon</span>
+</div>
+
+        </div>
+        <!-- thsi parts is for all the filters and search places -->
+<div class="controles">
+    <input type="search" id="search" placeholder="Search for your Crypto"/>
+    <div class="select-container">
+<select id="sortBy">
+  <option value="market_cap_rank">Sort: Rank</option>
+  <option value="current_price">Sort: Price</option>
+  <option value="market_cap">Sort: Market Cap</option>
+
+  <option value="price_change_percentage_24h">Sort: % in 24h</option>
+</select>
+    </div>
+    <div class="select-container">
+      <select id="sortRank">
+      <option value="asc">Low-High</option>
+        <option value="desc">High-Low</option>
+    </select>
+    </div>
+    
+
+<label class="wishContainer">
+    <input id="watchList"  type="checkbox"  > Watchlist
+</label>
+</div>
+<!-- this section will take care of the available coins in the table  -->
+<div id="status" class="status" aria-live="polite">Loading Top 50…</div>
+    </header>
+                 <!-- This part will show us all the coins in a table type list with all the details  -->
+      <main class="wrap" id="app" tabindex="-1">
+    <table aria-label="Top 50 cryptocurrencies">
+      <thead>
+        <tr>
+          <th>RANK</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>1D</th>
+          <th>Graph (1W)</th>
+          <th><i class="fas fa-heart fa-lg" ></i></th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </main>
+    <!-- this sliding part will show all the details and updated time of the data -->
+  <aside class="drawer" id="drawer" aria-hidden="true">
+
+    <header class="wrap" style="display: flex; align-items: center; justify-content: space-between;gap: 10.5px;">
+   <div style="display: flex; align-items: center; gap:8px">
+     <img id="CoinIcon" width="31" height="31" style="border-radius: 999;"/>
+ </div>
+ <div>
+
+     <div class="muted" id="drawerSymbol">
+
+     </div>
+ </div>
+   <button class="close-btn" id="closeDrawer" aria-label="Close details">X</button>
+    </header>
+    <div class="content">
+      <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:center;">
+   <div class="tag" id="drawerRank"></div>
+      <div class="tag" id="drawerMcap"></div>
+
+    <div class="tag" id="drawerPrice"></div>
+      </div>
+      <p id="drawerDesc" style="margin-top:14px; white-space: pre-wrap">    </p>
+      <p class="muted">Data via CoinGecko • Last updated <span id="drawerUpdated">–</span></p>
+    </div>
+
+  </aside>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
