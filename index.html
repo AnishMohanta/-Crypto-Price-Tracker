@@ -22,25 +22,28 @@
       <!-- this parts is for all the filters and search places -->
       <div class="controles">
         <input type="search" id="search" placeholder="Search.." />
-        <div class="select-container">
-          <select id="sortBy">
-            <option value="market_cap_rank">Sort: Rank</option>
-            <option value="current_price">Sort: Price</option>
-            <option value="market_cap">Sort: Market Cap</option>
+         <div class="controles-row">
 
-            <option value="price_change_percentage_24h">Sort: % in 24h</option>
-          </select>
-        </div>
-        <div class="select-container">
-          <select id="sortRank">
-            <option value="asc">Low-High</option>
-            <option value="desc">High-Low</option>
-          </select>
-        </div>
-
-        <label class="wishContainer">
-          <input id="watchList" type="checkbox" /> Watchlist
-        </label>
+           <div class="select-container">
+             <select id="sortBy">
+               <option value="market_cap_rank">Sort: Rank</option>
+               <option value="current_price">Sort: Price</option>
+               <option value="market_cap">Sort: Market Cap</option>
+   
+               <option value="price_change_percentage_24h">Sort: % in 24h</option>
+             </select>
+           </div>
+           <div class="select-container">
+             <select id="sortRank">
+               <option value="asc">Low-High</option>
+               <option value="desc">High-Low</option>
+             </select>
+           </div>
+   
+           <label class="wishContainer">
+             <input id="watchList" type="checkbox" /> Watchlist
+           </label>
+         </div>
       </div>
       <!-- this section will take care of the available coins in the table  -->
       <div id="status" class="status" aria-live="polite">Loading Top 50…</div>

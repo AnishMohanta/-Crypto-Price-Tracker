@@ -104,6 +104,16 @@ header {
   width: 15%;
   background: var(--carddark);
 }
+
+.controles-row{
+   display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+ 
+}
 .controles input:focus,
 .controles select:focus {
   outline: none;
