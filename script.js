@@ -37,7 +37,13 @@ function renderTable(coins) {
     //creating the naming symbol and iconimage part
     const name = `<td>
     <div style='display:flex;align-items:center;gap:8px;'>
-    <img src="${coin.image}" width="20" height="20" alt="${coin.symbol} logo"/>
+   <img 
+  src="${coin.image}" 
+  width="25" 
+  height="25" 
+  alt="${coin.symbol} logo"
+  style="background:white; border-radius:50%; padding:3px; box-shadow:0 0 2px rgba(0,0,0,0.15);"
+/>
     
     <span>${coin.name} <small style= "color:var(--muted)">(${coin.symbol.toUpperCase()})</small></span>
     </div> 
@@ -114,8 +120,22 @@ function filterAndSort() {
   }
 
 
-
   if (watchListCheck.checked) { filtered = filtered.filter(c => watchList.includes(c.id)) }
+
+  const table = document.querySelector("table");
+
+  if (filtered.length === 0) {
+    table.style.display = "none";
+    statusText.innerHTML = `
+      <p style="text-align:center; padding:2rem; color:var(--muted);">
+        ${watchListCheck.checked ? "Watchlist is empty" : "No coins found"}
+      </p>
+    `;
+    return;
+  }
+
+
+  table.style.display = "table";
   const sortField = sortBy.value
   filtered.sort((a, b) => {
     return sortRank.value === "asc" ? a[sortField] - b[sortField] : b[sortField] - a[sortField]
